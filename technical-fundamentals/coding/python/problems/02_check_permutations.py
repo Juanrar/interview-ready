@@ -4,7 +4,14 @@
 
 
 def check_permutations(s1: str, s2: str) -> bool:
-    pass
+    #return sorted(s1) == sorted(s2) 
+    def counting(s):
+        result = {}
+        for c in s1:
+            result[c] = 1 + result.get(c, 0)
+        #print("result: ", result)
+        return result
+    return counting(s1) == counting(s2)
 
 
 # Tests
