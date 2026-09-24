@@ -5,8 +5,12 @@
 
 
 def is_unique(s: str) -> bool:
-    pass
-
+    seen = set()
+    for l in s:
+        if l in seen:
+            return False
+        seen.add(l)
+    return True
 
 # Tests
 
@@ -44,3 +48,6 @@ def test_handles_mixed_case():
     assert is_unique("aA") is True
     assert is_unique("Aa") is True
     assert is_unique("Hello") is False
+
+
+test_returns_true_for_unique_characters()
