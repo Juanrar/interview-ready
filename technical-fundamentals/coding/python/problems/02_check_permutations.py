@@ -7,11 +7,11 @@ def check_permutations(s1: str, s2: str) -> bool:
     #return sorted(s1) == sorted(s2) 
     def counting(s):
         result = {}
-        for c in s1:
+        for c in s:
             result[c] = 1 + result.get(c, 0)
         #print("result: ", result)
         return result
-    return counting(s1) == counting(s2)
+    return counting(s2) == counting(s1)
 
 
 # Tests
