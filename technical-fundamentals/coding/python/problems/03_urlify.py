@@ -6,7 +6,13 @@
 
 
 def urlify(s: str) -> str:
-    pass
+    result = ""
+    for i in range(len(s)):
+        if s[i] == " ":
+            result += "%20"
+        else:
+            result += s[i]
+    return result
 
 
 # Tests
