@@ -11,7 +11,21 @@
 
 
 def palindrome_permutation(s: str) -> bool:
-    pass
+    counts = {}
+
+    for ch in s.lower():
+        if ch == " ":
+            continue
+        counts[ch] = 1 + counts.get(ch, 0)
+
+    odd_count = 0
+    for count in counts.values():
+        if count % 2 != 0:
+            odd_count += 1
+            if odd_count > 1:
+                return False
+
+    return True
 
 
 # Tests
